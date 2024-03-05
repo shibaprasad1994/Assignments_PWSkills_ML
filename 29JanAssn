@@ -1,0 +1,31 @@
+1. Guido van Rossum developed Python programming language.
+
+2. Python supports multiple programming paradigms, including object-oriented, imperative, functional, and procedural programming.
+
+3. Yes, Python is case-sensitive when dealing with identifiers.
+
+4. The correct extension of a Python file is ".py".
+
+5. Python code is typically interpreted, but it can also be compiled to bytecode before execution.
+
+6. Blocks of code in Python are defined using indentation. Common ones include if statements, loops, and function definitions.
+
+7. The character "#" is used to denote single-line comments in Python.
+
+8. Functions like `sys.version` or `platform.python_version()` can help find the version of Python.
+
+9. Python supports creating anonymous functions at runtime using a construct called "lambda".
+
+10. "pip" stands for "Pip Installs Packages" or "Pip Installs Python".
+
+11. Built-in functions in Python include eg. `print()`, `len()`, `range()`, `input()`, `sum()`, `max()`, `min()`, `abs()`, `type()`, etc.
+
+12. The maximum possible length of an identifier in Python is platform-dependent but typically is 255 characters.
+
+13. Benefits of using Python include its simplicity, readability, extensive libraries and frameworks, cross-platform compatibility, and strong community support.
+
+14. Memory management in Python is handled by its memory manager, which utilizes garbage collection for automatic memory management.
+
+15. To install Python on Windows, download the installer from the official Python website and run it. During installation, ensure to check the box that says "Add Python to PATH" to set the path variables automatically.
+
+16. Yes, indentation is required in Python to denote blocks of code, such as within loops, conditionals, and function definitions.

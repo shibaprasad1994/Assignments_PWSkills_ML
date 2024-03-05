@@ -1,0 +1,96 @@
+ class in object-oriented programming is a blueprint for creating objects (instances). It defines the attributes (properties) and methods (functions) that the objects of the class will have. It acts as a template from which objects are created.
+Object: An object is an instance of a class. It represents a specific entity in the real world that is modeled by the class. Objects have state (attributes) and behavior (methods) associated with them.
+Example:
+class Car:
+    def __init__(self, brand, model):
+        self.brand = brand
+        self.model = model
+
+    def display_info(self):
+        print(f"Brand: {self.brand}, Model: {self.model}")
+
+# Creating objects of class Car
+car1 = Car("Toyota", "Corolla")
+car2 = Car("Honda", "Civic")
+
+# Accessing object attributes and methods
+car1.display_info()
+car2.display_info()
+
+
+Q2. Name the four pillars of OOPs.
+A)Four Pillars of OOPs:
+
+-Encapsulation: It is the bundling of data (attributes) and methods (functions) that operate on the data into a single unit called a class.
+-Abstraction: It is the concept of hiding the complex implementation details and showing only the essential features of an object.
+-Inheritance: It is the mechanism by which one class can inherit properties and behavior from another class.
+-Polymorphism: It allows objects to take on multiple forms or have multiple behaviors. It enables objects of different classes to be treated as objects of a common superclass.
+
+
+Q3. Explain why the __init__() function is used. Give a suitable example.
+
+Purpose of init() function:
+
+-The __init__() function is a special method in Python classes that is called automatically when an object is created. It initializes the object's attributes with the values provided as arguments.
+-It is used to perform initialization tasks such as initializing instance variables or setting up the object's state.
+class Person:
+    def __init__(self, name, age):
+        self.name = name
+        self.age = age
+
+    def display_info(self):
+        print(f"Name: {self.name}, Age: {self.age}")
+
+# Creating an object of class Person
+person1 = Person("Alice", 30)
+person1.display_info()
+
+
+Q4. Why self is used in OOPs?
+
+Purpose of self in OOPs:
+
+-self is a reference to the current instance of the class. It is used to access variables and methods of the object within the class.
+-When calling methods or accessing attributes inside a class, self must be explicitly used to refer to the instance variables and methods of the class.
+
+
+Q5. What is inheritance? Give an example for each type of inheritance.
+
+Inheritance:
+
+-Inheritance is a fundamental concept in object-oriented programming where a class (subclass or child class) can inherit attributes and methods from another class (superclass or parent class).
+-It promotes code reusability and establishes a hierarchical relationship between classes.
+There are different types of inheritance: single inheritance, multiple inheritance, multilevel inheritance, and hierarchical inheritance.
+Example of 
+single inheritance:
+
+class Animal:
+    def speak(self):
+        print("Animal speaks")
+
+class Dog(Animal):
+    def bark(self):
+        print("Dog barks")
+
+dog = Dog()
+dog.speak()  # Inherited method from Animal class
+dog.bark()   # Method defined in Dog class
+
+
+Multiple inheritance:
+class Parent1:
+    def method1(self):
+        print("Method 1 from Parent1")
+
+class Parent2:
+    def method2(self):
+        print("Method 2 from Parent2")
+
+class Child(Parent1, Parent2):
+    def child_method(self):
+        print("Child method")
+
+child = Child()
+child.method1()   # Method inherited from Parent1
+child.method2()   # Method inherited from Parent2
+

@@ -1,0 +1,71 @@
+1. Tuples are ordered collections of elements, similar to lists, but immutable, meaning their elements cannot be changed or modified after creation. They are defined using parentheses () and can contain elements of different data types.
+
+2. The two tuple methods in Python are count() and index().
+
+count(): Returns the number of occurrences of a specified value in the tuple.
+Example:
+my_tuple = (1, 2, 3, 1, 4, 1)
+count = my_tuple.count(1)
+print(count)  # Output: 3
+
+index(): Returns the index of the first occurrence of a specified value in the tuple.
+Example:
+my_tuple = ('a', 'b', 'c', 'a', 'd')
+index = my_tuple.index('a')
+print(index)  # Output: 0
+
+Tuples have fewer built-in methods than lists because tuples are immutable, so methods that modify the tuple are not applicable.
+
+3. Sets do not allow duplicate items. 
+my_list = [1, 1, 1, 2, 1, 3, 1, 4, 2, 1, 2, 2, 2, 3, 2, 4, 3, 1, 3, 2, 3, 3, 3, 4, 4, 1, 4, 2, 4, 3, 4, 4]
+unique_items = set(my_list)
+print(unique_items)
+
+#op: {1,2,3,4}
+
+4. The union() method returns a new set containing all the unique elements from both sets, whereas the update() method adds all elements from another set to the current set.
+Example:
+
+set1 = {1, 2, 3}
+set2 = {3, 4, 5}
+
+# union()
+union_set = set1.union(set2)
+print(union_set)  # Op: {1, 2, 3, 4, 5}
+
+# update()
+set1.update(set2)
+print(set1)  # Op: {1, 2, 3, 4, 5}
+
+5. A dictionary is an unordered collection of key-value pairs. Each key is unique and maps to a specific value. Dictionaries are defined using curly braces {}.
+
+my_dict = {'name': 'Shiv', 'age': 30, 'city': 'Australia'}
+
+Dictionaries are unordered, meaning the order of elements is not guaranteed.
+
+6. Yes, we can create nested dictionaries. A nested dictionary is a dictionary within another dictionary.
+Example:
+nested_dict = {'outer_key': {'inner_key': 'value'}}
+
+7. Using the setdefault() method, you can create a key named 'topics' in the given dictionary and assign the value to the provided list.
+dict1 = {'language': 'Python', 'course': 'Data Science Masters'}
+dict1.setdefault('topics', ['Python', 'Machine Learning', 'Deep Learning'])
+print(dict1)
+
+#op: {'language': 'Python', 'course': 'Data Science Masters', 'topics': ['Python', 'Machine Learning', 'Deep Learning']}
+
+8. The three view objects in dictionaries are dict_keys, dict_values, and dict_items. They provide a dynamic view of the dictionary's keys, values, and key-value pairs, respectively.
+
+dict1 = {'Sport': 'Cricket', 'Teams': ['India', 'Australia', 'England', 'South Africa', 'Sri Lanka', 'New Zealand']}
+
+keys_view = dict1.keys()
+values_view = dict1.values()
+items_view = dict1.items()
+
+print(keys_view)
+print(values_view)
+print(items_view)
+
+#op:dict_keys(['Sport', 'Teams'])
+dict_values(['Cricket', ['India', 'Australia', 'England', 'South Africa', 'Sri Lanka', 'New Zealand']])
+dict_items([('Sport', 'Cricket'), ('Teams', ['India', 'Australia', 'England', 'South Africa', 'Sri Lanka', 'New Zealand'])])
