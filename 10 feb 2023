@@ -1,0 +1,71 @@
+Q1. Which function is used to open a file? What are the different modes of opening a file? Explain each mode
+of file opening.
+Q2. Why close() function is used? Why is it important to close a file?
+Q3. Write a python program to create a text file. Write ‘I want to become a Data Scientist’ in that file. Then
+close the file. Open this file and read the content of the file.
+Q4. Explain the following with python code: read(), readline() and readlines().
+Q5. Explain why with statement is used with open(). What is the advantage of using with statement and
+open() together?
+Q6. Explain the write() and writelines() functions. Give a suitable example.
+
+ANS
+
+1) In Python, the open() function is used to open a file. It takes two parameters: the file name/path and the mode in which the file should be opened. The different modes of opening a file are:
+
+'r': Opens the file in read-only mode. The file pointer is placed at the beginning of the file.
+'w': Opens the file in write-only mode. If the file exists, it truncates the file to zero length. If the file does not exist, it creates a new file for writing.
+'a': Opens the file in append mode. The file pointer is at the end of the file if the file exists. If the file does not exist, it creates a new file for writing.
+'r+': Opens the file in both read and write mode. The file pointer is placed at the beginning of the file.
+'w+': Opens the file in both read and write mode. If the file exists, it truncates the file to zero length. If the file does not exist, it creates a new file for reading and writing.
+'a+': Opens the file in both read and append mode. The file pointer is at the end of the file if the file exists. If the file does not exist, it creates a new file for reading and writing.
+
+
+2)The close() function is used to close a file that has been opened using the open() function. It's important to close a file because it releases the system resources associated with the file. Failing to close a file can lead to resource leaks, which can affect the performance of your program, especially when dealing with a large number of files.
+
+3)
+# Create a text file and write to it
+with open('data_scientist.txt', 'w') as file:
+    file.write('I want to become a Data Scientist')
+
+# Open the file and read its content
+with open('data_scientist.txt', 'r') as file:
+    content = file.read()
+    print(content)
+
+Q4. Explanation with Python code for read(), readline(), and readlines():
+
+read(): Reads the entire content of the file as a string.
+with open('data_scientist.txt', 'r') as file:
+    content = file.read()
+    print(content)
+    
+    
+readline(): Reads a single line from the file.    
+with open('data_scientist.txt', 'r') as file:
+    line = file.readline()
+    print(line)
+    
+readlines(): Reads all the lines from the file and returns them as a list of strings.
+with open('data_scientist.txt', 'r') as file:
+    lines = file.readlines()
+    for line in lines:
+        print(line)
+
+    
+Q5. The with statement in Python is used to ensure that a resource is properly released after being used. When used with open(), it automatically closes the file once the block of code inside the with statement is exited. The advantage of using with statement with open() is that it guarantees the file will be closed, even if an exception occurs within the block of code.
+
+Q6. Explanation of write() and writelines() functions with an example:
+
+write(): Writes a string to the file. 
+with open('output.txt', 'w') as file:
+    file.write('This is a line of text.\n')
+    file.write('This is another line of text.\n')
+
+writelines(): Writes a list of strings to the file.
+
+lines = ['Line 1\n', 'Line 2\n', 'Line 3\n']
+with open('output.txt', 'w') as file:
+    file.writelines(lines)
+
+
+
