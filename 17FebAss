@@ -1,0 +1,117 @@
+Q1. What is MongoDB? Explain non-relational databases in short. In which scenarios is it preferred to use MongoDB over SQL databases?
+
+MongoDB is a popular open-source NoSQL database program. It is a document-oriented database, classified as a non-relational or NoSQL database, which means it does not rely on the traditional table-based relational database structure. Instead, it stores data in flexible, JSON-like documents with dynamic schemas.
+
+Non-relational databases, including MongoDB, are preferred in scenarios where:
+
+Scalability: Non-relational databases are often more scalable, especially in distributed environments, due to their ability to handle large volumes of data across multiple servers more effectively.
+
+Flexibility: NoSQL databases like MongoDB offer flexible schemas, allowing developers to store and manipulate semi-structured or unstructured data more easily compared to SQL databases, which have rigid schemas.
+
+Complex Data: Non-relational databases are suitable for storing complex, hierarchical, or nested data structures, such as JSON documents, arrays, and nested objects.
+
+Speed: NoSQL databases are often faster for certain types of operations, such as simple key-value lookups or document retrieval, compared to SQL databases, especially in cases where relationships between data are not as important.
+
+Big Data and Real-time Analytics: MongoDB and other NoSQL databases are well-suited for handling big data and real-time analytics applications due to their ability to scale horizontally and efficiently process large volumes of data in distributed environments.
+
+Q2. State and Explain the features of MongoDB.
+
+MongoDB offers several features, including:
+
+Document-Oriented Storage: Data is stored in flexible, JSON-like documents, allowing for easy manipulation and retrieval.
+
+Schema-less Design: MongoDB does not require a predefined schema, enabling dynamic and flexible data models.
+
+High Availability: MongoDB supports replica sets for automatic failover and data redundancy, ensuring high availability and reliability.
+
+Horizontal Scalability: It supports sharding, allowing data to be distributed across multiple servers, providing scalability as data grows.
+
+Indexing: MongoDB supports various types of indexes to improve query performance.
+
+Aggregation Framework: It provides a powerful aggregation framework for performing complex data aggregation operations.
+
+Rich Query Language: MongoDB's query language includes a wide range of operators and expressions for querying and manipulating data.
+
+Q3. Write a code to connect MongoDB to Python. Also, create a database and a collection in MongoDB.
+
+import pymongo
+
+# Connect to MongoDB
+client = pymongo.MongoClient("mongodb://localhost:27017/")
+
+# Create a database
+mydb = client["mydatabase"]
+
+# Create a collection
+mycol = mydb["customers"]\
+
+Q4. Using the database and the collection created in question number 3, write a code to insert one record, and insert many records. Use the find() and find_one() methods to print the inserted record.
+
+# Insert one record
+mydict = { "name": "John", "address": "Highway 37" }
+insert_one_result = mycol.insert_one(mydict)
+print("Inserted record ID:", insert_one_result.inserted_id)
+
+# Insert many records
+mylist = [
+  { "name": "Amy", "address": "Apple st 652"},
+  { "name": "Hannah", "address": "Mountain 21"},
+  { "name": "Michael", "address": "Valley 345"},
+  { "name": "Sandy", "address": "Ocean blvd 2"},
+]
+insert_many_result = mycol.insert_many(mylist)
+print("Inserted records IDs:", insert_many_result.inserted_ids)
+
+# Find one record
+print("One record:", mycol.find_one())
+
+# Find all records
+print("All records:")
+for x in mycol.find():
+  print(x)
+  
+Q5. Explain how you can use the find() method to query the MongoDB database. Write a simple code to demonstrate this.
+
+The find() method is used to query documents in a MongoDB collection. It returns a cursor object, which can be iterated over to retrieve matching documents.
+
+Example code:
+
+# Find documents matching a query
+query = { "address": "Mountain 21" }
+results = mycol.find(query)
+
+# Print matching documents
+for result in results:
+    print(result)
+    
+This code finds all documents in the collection where the "address" field is "Mountain 21" and prints them.
+
+Q6. Explain the sort() method. Give an example to demonstrate sorting in MongoDB.
+
+The sort() method is used to sort the documents in a MongoDB collection based on one or more fields. It takes one parameter, which is a dictionary specifying the field(s) to sort by and the sort order.
+
+Example:
+
+# Sort documents by the "name" field in ascending order
+sorted_results = mycol.find().sort("name")
+
+# Print sorted documents
+for result in sorted_results:
+    print(result)
+This code sorts all documents in the collection by the "name" field in ascending order.
+
+Q7. Explain why delete_one(), delete_many(), and drop() are used.
+
+delete_one(): This method is used to delete a single document that matches a specified filter. It removes only the first matching document that it finds.
+
+delete_many(): This method is used to delete multiple documents that match a specified filter. It removes all documents that match the filter criteria.
+
+drop(): This method is used to drop or delete an entire collection from the database. It deletes all documents in the collection and the collection itself.
+
+These methods are used to remove data from MongoDB collections based on specific criteria, such as deleting individual documents, multiple documents, or entire collections.
+
+
+
+
+
+
