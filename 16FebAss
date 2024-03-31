@@ -1,0 +1,122 @@
+Q1. What is a database? Differentiate between SQL and NoSQL databases.
+
+A database is an organized collection of data, typically stored and accessed electronically from a computer system. SQL (Structured Query Language) and NoSQL are two types of databases.
+
+SQL databases are relational databases that use structured query language (SQL) for defining and manipulating data. They have a predefined schema, support ACID (Atomicity, Consistency, Isolation, Durability) transactions, and are best suited for applications requiring complex queries and transactions, such as banking systems.
+
+NoSQL databases, on the other hand, are non-relational databases that do not require a fixed schema. They are designed to handle large sets of distributed data and are highly scalable. NoSQL databases come in various types, including document-oriented, key-value stores, column-oriented, and graph databases. They are suitable for applications with large volumes of unstructured or semi-structured data, such as social media platforms or real-time analytics.
+
+Q2. What is DDL? Explain why CREATE, DROP, ALTER, and TRUNCATE are used with an example.
+
+DDL (Data Definition Language) is a subset of SQL used to define and modify the structure of database objects. Examples of DDL commands include CREATE, DROP, ALTER, and TRUNCATE.
+
+CREATE: Used to create new database objects like tables, indexes, or views. For example:
+
+CREATE TABLE employees (
+    id INT PRIMARY KEY,
+    name VARCHAR(100),
+    salary DECIMAL(10, 2)
+);
+DROP: Used to delete database objects. For example:
+
+DROP TABLE employees;
+
+ALTER: Used to modify the structure of an existing database object. For example, to add a new column:
+
+ALTER TABLE employees
+ADD COLUMN department VARCHAR(50);
+
+TRUNCATE: Used to delete all data from a table without deleting the table structure. For example:
+
+TRUNCATE TABLE employees;
+
+Q3. What is DML? Explain INSERT, UPDATE, and DELETE with an example.
+
+DML (Data Manipulation Language) is a subset of SQL used to manipulate data within database objects like tables. Examples of DML commands include INSERT, UPDATE, and DELETE.
+
+INSERT: Used to insert new rows into a table. For example:
+
+
+INSERT INTO employees (id, name, salary)
+VALUES (1, 'John Doe', 50000);
+
+UPDATE: Used to modify existing data within a table. For example:
+
+
+UPDATE employees
+SET salary = 55000
+WHERE id = 1;
+
+DELETE: Used to remove rows from a table. For example:
+
+
+DELETE FROM employees
+WHERE id = 1;
+
+Q4. What is DQL? Explain SELECT with an example.
+
+DQL (Data Query Language) is a subset of SQL used to query and retrieve data from a database. The most commonly used DQL command is SELECT.
+
+SELECT: Used to retrieve data from one or more tables. For example:
+
+SELECT * FROM employees;
+This query retrieves all columns from the employees table.
+
+Q5. Explain Primary Key and Foreign Key.
+
+Primary Key: A primary key is a column or a set of columns that uniquely identifies each row in a table. It ensures that each row in a table is uniquely identifiable. Primary keys are defined when creating a table and are often used as a reference point in relationships with other tables.
+
+Foreign Key: A foreign key is a column or a set of columns in a table that establishes a relationship with the primary key or a unique key in another table. It enforces referential integrity between the two related tables. Foreign keys ensure that the values in a column or set of columns in one table exist as values in another table's primary key or unique key column(s).
+
+Q6. Write a python code to connect MySQL to python. Explain the cursor() and execute() method.
+
+Here's an example of how to connect MySQL to Python using the mysql-connector-python library:
+
+
+import mysql.connector
+
+# Connect to MySQL
+connection = mysql.connector.connect(
+    host="localhost",
+    user="your_username",
+    password="your_password",
+    database="your_database"
+)
+
+# Create a cursor object
+cursor = connection.cursor()
+
+# Execute SQL query
+cursor.execute("SELECT * FROM your_table")
+
+# Fetch results
+results = cursor.fetchall()
+
+# Print results
+for row in results:
+    print(row)
+
+# Close cursor and connection
+cursor.close()
+connection.close()
+Explanation:
+
+cursor(): The cursor() method creates a cursor object which is used to execute SQL queries and fetch results.
+execute(): The execute() method is used to execute SQL queries. It takes the SQL query as a parameter. In the example, "SELECT * FROM your_table" is the SQL query.
+fetchall(): The fetchall() method retrieves all the rows of a query result set and returns a list of tuples. In the example, results will contain all rows fetched from the database.
+close(): Both cursor and connection objects should be closed after use to free up resources.
+
+Q7. Give the order of execution of SQL clauses in an SQL query.
+
+The order of execution of SQL clauses in a query is as follows:
+
+FROM
+WHERE
+GROUP BY
+HAVING
+SELECT
+ORDER BY
+
+
+
+
