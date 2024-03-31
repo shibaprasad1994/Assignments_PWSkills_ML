@@ -1,0 +1,81 @@
+Q1. What is an API? Give an example where an API is used in real life.
+
+An API (Application Programming Interface) is a set of rules, protocols, and tools that allows different software applications to communicate with each other. It defines the methods and data formats that applications can use to request and exchange information.
+
+Example: When you use a weather app on your smartphone to check the current weather forecast, the app is likely using an API provided by a weather service provider (such as OpenWeatherMap or The Weather Company) to retrieve the weather data. The weather service's API allows the app to make requests for weather information, such as temperature, humidity, and forecasts, and receive the data in a structured format that the app can understand and display to the user.
+
+Q2. Give advantages and disadvantages of using API.
+
+Advantages of using API:
+
+Encapsulation: APIs abstract away the complexity of underlying systems, allowing developers to interact with them using simplified interfaces.
+Reusability: APIs can be reused across multiple applications, saving time and effort in development.
+Scalability: APIs enable modular design, making it easier to scale and maintain complex systems.
+Interoperability: APIs facilitate communication and integration between different systems and platforms.
+Innovation: APIs enable developers to build upon existing services and create new applications with added functionality.
+Disadvantages of using API:
+
+Dependency: Applications relying on external APIs are dependent on the availability and stability of those APIs.
+Security Risks: Exposing APIs can introduce security vulnerabilities if not properly secured and authenticated.
+Versioning Issues: Changes or updates to APIs can break compatibility with existing applications, requiring versioning and backward compatibility.
+Performance Overhead: Excessive use of APIs or inefficient API designs can lead to performance issues and increased network overhead.
+Governance: Managing and maintaining APIs, including documentation, versioning, and access control, can be complex and require governance.
+
+Q3. What is a Web API? Differentiate between API and Web API.
+
+A Web API is an API that is accessed over the web using HTTP protocols. It enables communication and interaction between web-based applications or services and client applications. Web APIs typically follow RESTful or SOAP architectures.
+
+The main difference between API and Web API is the medium of communication:
+
+API: An API can refer to any type of interface between software components, including local libraries, system calls, or network protocols.
+Web API: A Web API specifically refers to APIs that are accessed over the web using HTTP protocols, making them accessible from anywhere on the internet.
+
+Q4. Explain REST and SOAP Architecture. Mention shortcomings of SOAP.
+
+REST (Representational State Transfer): REST is an architectural style for designing networked applications. It uses simple HTTP protocols for communication and relies on standard HTTP methods (GET, POST, PUT, DELETE) to perform CRUD operations on resources. RESTful APIs are stateless, scalable, and lightweight, making them suitable for distributed systems and web services.
+
+SOAP (Simple Object Access Protocol): SOAP is a protocol for exchanging structured information in the implementation of web services. It uses XML-based messaging formats and typically operates over HTTP, SMTP, or other application-layer protocols. SOAP APIs define a strict message structure and support advanced features like transactions, security, and reliability.
+
+Shortcomings of SOAP:
+
+Complexity: SOAP APIs are more complex and heavyweight compared to RESTful APIs, requiring more bandwidth and processing overhead.
+Overhead: SOAP messages are larger in size due to the XML-based format, resulting in increased network traffic and slower performance.
+Tight Coupling: SOAP APIs often lead to tight coupling between client and server implementations, making it harder to evolve and maintain the system.
+Limited Browser Support: SOAP APIs are not as well-supported in web browsers as RESTful APIs, limiting their usability in web applications.
+Verbose Syntax: SOAP messages are verbose and difficult to read, making debugging and troubleshooting more challenging.
+
+Q5. Differentiate between REST and SOAP.
+
+REST (Representational State Transfer) and SOAP (Simple Object Access Protocol) are both used for designing networked applications, but they have distinct differences:
+
+Protocol:
+
+REST: Uses simple HTTP protocols for communication and follows resource-based architecture.
+SOAP: Defines its own protocol for exchanging structured information using XML-based messaging formats.
+
+Message Format:
+
+REST: Typically uses lightweight data formats such as JSON or XML for message payloads.
+SOAP: Uses XML-based messaging formats for requests and responses.
+
+Operations:
+
+REST: Uses standard HTTP methods (GET, POST, PUT, DELETE) for CRUD operations on resources.
+SOAP: Defines its own set of operations and supports advanced features like transactions, security, and reliability.
+
+State:
+
+REST: Stateless architecture where each request from the client contains all necessary information for the server to fulfill it.
+SOAP: Can maintain stateful connections between client and server through session management and message headers.
+
+Performance:
+
+REST: Generally has better performance due to its lightweight nature and simpler message formats.
+SOAP: Typically has higher overhead and slower performance due to the XML-based message format and additional features.
+
+Flexibility:
+
+REST: Offers more flexibility and scalability, making it suitable for distributed systems and web services.
+SOAP: Offers more advanced features and functionality but is often more complex and less flexible.
+
+Overall, REST is preferred for simpler, lightweight, and scalable applications, while SOAP is suitable for applications requiring advanced features like transactions and security.
